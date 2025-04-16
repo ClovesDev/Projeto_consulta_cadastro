@@ -301,7 +301,7 @@
         return;
     }
 
-    const res = await fetch(`/api/recomendar_motos?uso=${encodeURIComponent(uso)}`);
+    const res = await fetch(`/recomendar_gemini/?uso=${encodeURIComponent(uso)}`);
     if (res.ok) {
         const motosRecomendadas = await res.json();
         exibirMotos(motosRecomendadas);
