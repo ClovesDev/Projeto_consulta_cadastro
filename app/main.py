@@ -1,11 +1,8 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 from . import models
 from .database import engine
 from .routes import router
-from pydantic import BaseModel
-from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from .gemini import recomendar_motos_gemini
 from fastapi.middleware.cors import CORSMiddleware
 
 models.Base.metadata.create_all(bind=engine)

@@ -295,20 +295,20 @@
         });
 
         async function buscarRecomendacoesGemini() {
-            const uso = document.getElementById("inputGeminiBusca").value.trim();
-            if (!uso) {
-                alert("Digite um termo de uso para buscar.");
-                return;
-            }
+    const uso = document.getElementById("inputGeminiBusca").value.trim();
+    if (!uso) {
+        alert("Digite um termo de uso para buscar.");
+        return;
+    }
 
-            const res = await fetch(`/recomendar_gemini/?uso=${encodeURIComponent(uso)}`);
-            if (res.ok) {
-                const motos = await res.json();
-                exibirMotos(motos);
-            } else {
-                alert("Erro ao buscar recomendações.");
-            }
-        }
+    const res = await fetch(`/api/recomendar_motos?uso=${encodeURIComponent(uso)}`);
+    if (res.ok) {
+        const motosRecomendadas = await res.json();
+        exibirMotos(motosRecomendadas);
+    } else {
+        alert("Erro ao buscar recomendações.");
+    }
+}
     </script>
 
 </body>
