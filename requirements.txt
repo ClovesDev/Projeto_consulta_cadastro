@@ -2,3 +2,8 @@ fastapi
 uvicorn
 google-generativeai
 python-decouple
+python-dotenv
+sqlalchemy
+pymysql
+pydantic
+httpx
